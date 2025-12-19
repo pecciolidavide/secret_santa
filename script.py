@@ -131,7 +131,7 @@ def scrivi_html(NOME_FILE, NOME_DONATORE, NOME_RICEVENTE):
 </html>"""
 
     # Il testo esatto che vuoi scrivere
-    testo_da_scrivere = PREAMBOLO + NOME_DONATORE + TESTO_IN_MEZZO + POSTAMBOLO
+    testo_da_scrivere = PREAMBOLO + NOME_DONATORE + TESTO_IN_MEZZO + NOME_RICEVENTE + POSTAMBOLO
 
     # Crea il file e scrive il testo
     with open(nome_completo, "w", encoding="utf-8") as f:
@@ -147,7 +147,6 @@ smistate = organizza_per_categorie(elenco_persone) # Creo le liste
 
 for lista in smistate:
     randomized = mescola_lista(lista)
-    print(randomized)
     for i in range(len(randomized)):
         if ( (i + 1) < len(randomized) ):
             j = i+1
@@ -156,6 +155,8 @@ for lista in smistate:
         donatore = randomized[i]
         ricevente = randomized[j]
         for persona in elenco_persone:
-            if persona[0] = donatore:
+            if persona[0] == donatore:
                 file_da_scrivere = persona[1]
+        # print("File da scrivere " + file_da_scrivere)
+        # print(donatore + " regala a " + ricevente)
         scrivi_html(file_da_scrivere, donatore, ricevente)
